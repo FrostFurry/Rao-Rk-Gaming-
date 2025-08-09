@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RAO RK GAMING</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      color: #e0e6f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Background subtle gaming images blended */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background:
+        url('https://i.imgur.com/q0xZ2Rr.png') center center no-repeat,
+        url('https://i.imgur.com/9uCgBQx.png') center center no-repeat;
+      background-size: 120px 120px, 150px 150px;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatBG 30s ease-in-out infinite;
+      mix-blend-mode: screen;
+    }
+    @keyframes floatBG {
+      0%, 100% { background-position: center 10%, center 80%; }
+      50% { background-position: center 50%, center 20%; }
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(30, 40, 55, 0.75);
+      border-radius: 16px;
+      padding: 40px 50px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1s ease forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Title */
+    h1 {
+      font-weight: 600;
+      font-size: 3rem;
+      color: #00ffc8;
+      text-align: center;
+      margin-bottom: 24px;
+      text-shadow: 0 0 8px #00ffc8;
+      letter-spacing: 2px;
+    }
+
+    /* Subtitle */
+    p.subtitle {
+      font-weight: 300;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.5;
+      color: #a0c9c4;
+      letter-spacing: 0.03em;
+    }
+
+    /* Categories */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 28px;
+      margin-bottom: 40px;
+    }
+
+    .category-card {
+      background: rgba(0, 255, 200, 0.1);
+      border-radius: 14px;
+      padding: 25px 20px;
+      box-shadow: 0 0 15px rgba(0, 255, 200, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      color: #00ffc8;
+      font-weight: 600;
+      text-align: center;
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+      user-select: none;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px #00ffc8;
+      color: #00fff0;
+    }
+
+    /* Call to action */
+    .cta {
+      text-align: center;
+      font-size: 1.3rem;
+      color: #c0eee9;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    /* Discord Button */
+    .discord-btn {
+      background: linear-gradient(135deg, #7289da, #4e5d94);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 45px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(114, 137, 218, 0.7);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+      letter-spacing: 0.03em;
+    }
+    .discord-btn:hover {
+      background: linear-gradient(135deg, #5a6fbf, #2f3a66);
+      box-shadow: 0 8px 25px rgba(90, 111, 191, 0.9);
+      transform: translateY(-3px);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #78909c;
+      font-style: italic;
+      text-align: center;
+      user-select: none;
+      opacity: 0;
+      animation: fadeInUp 1.5s ease forwards;
+      animation-delay: 1s;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+      h1 {
+        font-size: 2.3rem;
+      }
+      .category-card {
+        font-size: 1rem;
+      }
+      .cta {
+        font-size: 1rem;
+      }
+      .discord-btn {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="RAO RK GAMING server info">
+    <h1>RAO RK GAMING</h1>
+
+    <p class="subtitle">
+      What the server offers?!
+    </p>
+
+    <div class="categories" role="list">
+      <div class="category-card" role="listitem">Free Mirage Hunts</div>
+      <div class="category-card" role="listitem">Blox Fruits Players to Hang Out</div>
+      <div class="category-card" role="listitem">Sea Event Hunts</div>
+      <div class="category-card" role="listitem">Active Staff Team</div>
+      <div class="category-card" role="listitem">VIP Perks</div>
+      <div class="category-card" role="listitem">Booster Perks</div>
+      <div class="category-card" role="listitem">Level Perks</div>
+      <div class="category-card" role="listitem">Giveaways</div>
+      <div class="category-card" role="listitem">Exciting Events</div>
+      <div class="category-card" role="listitem">Friendly General Chat</div>
+    </div>
+
+    <p class="cta" aria-label="Join discord call to action">
+      Join our Discord Server To Level Up Your Gaming Experience, Collect In-Game Items, Make Friends,<br />
+      Let's Build An Awesome Roblox Gaming Community Together!
+    </p>
+
+    <a
+      href="https://discord.gg/your-server-invite" 
+      target="_blank"
+      rel="noopener noreferrer"
+      class="discord-btn"
+      aria-label="Join RAO RK GAMING Discord Server"
+    >
+      Join Our Discord
+    </a>
+  </div>
+
+  <footer>
+    Fan-made page for <strong>RAO RK GAMING</strong> &mdash; created with ❤️
+  </footer>
+</body>
+</html>
